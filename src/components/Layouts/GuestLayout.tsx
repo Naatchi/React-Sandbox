@@ -2,15 +2,16 @@ import Head from 'next/head'
 
 const GuestLayout = ({ children }) => {
     return (
-        <div>
+        <>
             <Head>
-                <title>Laravel</title>
+                <title>Wynntils</title>
+                <link rel="icon" href="/images/icons/favicon.svg" type="image/x-icon" />
             </Head>
 
             <div className="font-sans text-gray-900 antialiased">
                 {children}
             </div>
-        </div>
+        </>
     )
 }
 

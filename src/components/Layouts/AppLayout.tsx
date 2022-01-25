@@ -1,10 +1,16 @@
 import Navigation from './Navigation'
 import { useAuth } from '../../hooks/auth'
+import Head from 'next/head'
 
 const AppLayout = ({ header, children }) => {
     const { user } = useAuth({ middleware: 'auth', redirectIfAuthenticated: true })
 
     return (
+      <>
+        <Head>
+            <link rel="icon" href="/images/icons/favicon.svg" type="image/x-icon" />
+        </Head>
+
         <div className="min-h-screen bg-gray-100">
             <Navigation user={user} />
 
@@ -18,6 +24,7 @@ const AppLayout = ({ header, children }) => {
             {/* Page Content */}
             <main>{children}</main>
         </div>
+    </>
     )
 }
 

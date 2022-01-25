@@ -11,7 +11,7 @@ const Dashboard = () => {
             }>
 
             <Head>
-                <title>Laravel - Dashboard</title>
+                <title>Wynntils - Dashboard</title>
             </Head>
 
             <div className="py-12">
