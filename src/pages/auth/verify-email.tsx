@@ -1,5 +1,5 @@
 import ApplicationLogo from '../../components/ApplicationLogo'
-import AuthCard from '../../components/AuthCard'
+import AuthCard from '../../components/Auth/AuthCard'
 import Button from '../../components/Button'
 import GuestLayout from '../../components/Layouts/GuestLayout'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ import { useState } from 'react'
 const VerifyEmail = () => {
     const { logout, resendEmailVerification } = useAuth({
         middleware: 'auth',
-        redirectIfAuthenticated: true
+        redirectIfAuthenticated: '/user/dashboard'
     })
 
     const [status, setStatus] = useState(null)

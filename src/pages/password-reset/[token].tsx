@@ -1,13 +1,13 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthSessionStatus from '@/components/AuthSessionStatus'
-import AuthValidationErrors from '@/components/AuthValidationErrors'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import AuthCard from '../../components/Auth/AuthCard'
+import AuthSessionStatus from '../../components/Auth/AuthSessionStatus'
+import AuthValidationErrors from '../../components/Auth/AuthValidationErrors'
+import Button from '../../components/Button'
+import GuestLayout from '../../components/Layouts/GuestLayout'
+import Input from '../../components/Input'
+import Label from '../../components/Form/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -35,7 +35,7 @@ const PasswordReset = () => {
     }
 
     useEffect(() => {
-        setEmail(router.query.email || '')
+        setEmail(router.query.email.toString() || '')
     }, [router.query.email])
 
     return (
@@ -58,7 +58,7 @@ const PasswordReset = () => {
                 <form onSubmit={submitForm}>
                     {/* Email Address */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <Label className="" htmlFor="email">Email</Label>
 
                         <Input
                             id="email"
@@ -73,7 +73,7 @@ const PasswordReset = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">Password</Label>
                         <Input
                             id="password"
                             type="password"
@@ -86,7 +86,7 @@ const PasswordReset = () => {
 
                     {/* Confirm Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password_confirmation">
+                        <Label className="" htmlFor="password_confirmation">
                             Confirm Password
                         </Label>
 
@@ -103,7 +103,7 @@ const PasswordReset = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Button>Reset Password</Button>
+                        <Button type="" className="">Reset Password</Button>
                     </div>
                 </form>
             </AuthCard>
