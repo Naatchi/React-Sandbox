@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../hooks/auth'
 
 export default function Home() {
-    const { user } = useAuth({ middleware: 'guest' })
+    const { user } = useAuth({ middleware: 'guest', redirectIfAuthenticated: false })
 
     return (
         <>
@@ -21,11 +21,11 @@ export default function Home() {
                         </Link>
                         :
                         <>
-                            <Link href="/login">
+                            <Link href="/auth/login">
                                 <a className="text-sm text-gray-700 underline">Login</a>
                             </Link>
 
-                            <Link href="/register">
+                            <Link href="/auth/register">
                                 <a className="ml-4 text-sm text-gray-700 underline">
                                     Register
                                 </a>

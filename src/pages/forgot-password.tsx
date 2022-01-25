@@ -1,13 +1,13 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthSessionStatus from '@/components/AuthSessionStatus'
-import AuthValidationErrors from '@/components/AuthValidationErrors'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import ApplicationLogo from '../components/ApplicationLogo'
+import AuthCard from '../components/AuthCard'
+import AuthSessionStatus from '../components/AuthSessionStatus'
+import AuthValidationErrors from '../components/AuthValidationErrors'
+import Button from '../components/Button'
+import GuestLayout from '../components/Layouts/GuestLayout'
+import Input from '../components/Input'
+import Label from '../components/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../hooks/auth'
 import { useState } from 'react'
 
 const ForgotPassword = () => {
@@ -49,7 +49,7 @@ const ForgotPassword = () => {
                 <form onSubmit={submitForm}>
                     {/* Email Address */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <Label className="" htmlFor="email">Email</Label>
                         <Input
                             id="email"
                             type="email"
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Button>Email Password Reset Link</Button>
+                        <Button type="" className="">Email Password Reset Link</Button>
                     </div>
                 </form>
             </AuthCard>

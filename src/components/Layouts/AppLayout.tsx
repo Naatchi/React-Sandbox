@@ -1,8 +1,8 @@
-import Navigation from '@/components/Layouts/Navigation'
-import { useAuth } from '@/hooks/auth'
+import Navigation from './Navigation'
+import { useAuth } from '../../hooks/auth'
 
 const AppLayout = ({ header, children }) => {
-    const { user } = useAuth({ middleware: 'auth' })
+    const { user } = useAuth({ middleware: 'auth', redirectIfAuthenticated: true })
 
     return (
         <div className="min-h-screen bg-gray-100">

@@ -1,14 +1,15 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import AuthCard from '../../components/AuthCard'
+import Button from '../../components/Button'
+import GuestLayout from '../../components/Layouts/GuestLayout'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import { useState } from 'react'
 
 const VerifyEmail = () => {
     const { logout, resendEmailVerification } = useAuth({
         middleware: 'auth',
+        redirectIfAuthenticated: true
     })
 
     const [status, setStatus] = useState(null)
@@ -40,6 +41,8 @@ const VerifyEmail = () => {
 
                 <div className="mt-4 flex items-center justify-between">
                     <Button
+                        type={""}
+                        className=""
                         onClick={() => resendEmailVerification({ setStatus })}>
                         Resend Verification Email
                     </Button>

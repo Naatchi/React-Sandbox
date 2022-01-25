@@ -1,13 +1,13 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthSessionStatus from '@/components/AuthSessionStatus'
-import AuthValidationErrors from '@/components/AuthValidationErrors'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import AuthCard from '../../components/AuthCard'
+import AuthSessionStatus from '../../components/AuthSessionStatus'
+import AuthValidationErrors from '../../components/AuthValidationErrors'
+import Button from '../../components/Button'
+import GuestLayout from '../../components/Layouts/GuestLayout'
+import Input from '../../components/Input'
+import Label from '../../components/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -26,7 +26,7 @@ const Login = () => {
 
     useEffect(() => {
         if (router.query.reset?.length > 0 && errors.length == 0) {
-            setStatus(atob(router.query.reset))
+            setStatus(Buffer.from(router.query.reset as String, "base64"))
         } else {
             setStatus(null)
         }
@@ -58,7 +58,7 @@ const Login = () => {
                 <form onSubmit={submitForm}>
                     {/* Email Address */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <Label className="" htmlFor="email">Email</Label>
 
                         <Input
                             id="email"
@@ -73,7 +73,7 @@ const Login = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">Password</Label>
 
                         <Input
                             id="password"
@@ -111,7 +111,7 @@ const Login = () => {
                             </a>
                         </Link>
 
-                        <Button className="ml-3">Login</Button>
+                        <Button type="" className="ml-3">Login</Button>
                     </div>
                 </form>
             </AuthCard>
