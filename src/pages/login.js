@@ -19,7 +19,7 @@ const Login = () => {
         redirectIfAuthenticated: '/dashboard',
     })
 
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
@@ -35,7 +35,7 @@ const Login = () => {
     const submitForm = async event => {
         event.preventDefault()
 
-        login({ email, password, setErrors, setStatus })
+        login({ username, password, setErrors, setStatus })
     }
 
     return (
@@ -48,7 +48,6 @@ const Login = () => {
                         </a>
                     </Link>
                 }>
-
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
@@ -56,16 +55,16 @@ const Login = () => {
                 <AuthValidationErrors className="mb-4" errors={errors} />
 
                 <form onSubmit={submitForm}>
-                    {/* Email Address */}
+                    {/* Username */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="username">Username</Label>
 
                         <Input
-                            id="email"
-                            type="email"
-                            value={email}
+                            id="username"
+                            type="text"
+                            value={username}
                             className="block mt-1 w-full"
-                            onChange={event => setEmail(event.target.value)}
+                            onChange={event => setUsername(event.target.value)}
                             required
                             autoFocus
                         />
@@ -105,12 +104,6 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link href="/forgot-password">
-                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Forgot your password?
-                            </a>
-                        </Link>
-
                         <Button className="ml-3">Login</Button>
                     </div>
                 </form>
