@@ -10,12 +10,6 @@ const Dropdown = ({
 }) => {
     let alignmentClasses
 
-    switch (width) {
-        case '48':
-            width = 'w-48'
-            break
-    }
-
     switch (align) {
         case 'left':
             alignmentClasses = 'origin-top-left left-0'
@@ -37,6 +31,7 @@ const Dropdown = ({
                 <>
                     <Menu.Button as={React.Fragment}>{trigger}</Menu.Button>
 
+<<<<<<< HEAD:src/components/Dropdown.js
                     <Transition
                         show={open}
                         enter="transition ease-out duration-200"
@@ -56,6 +51,25 @@ const Dropdown = ({
                     </Transition>
                 </>
             )}
+=======
+                <Transition
+                    show={open}
+                    enter="transition ease-out duration-200"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                    >
+                    <div className={`absolute z-50 mt-2 w-${width} rounded-md shadow-lg ${alignmentClasses}`}>
+                        <Menu.Items className={`rounded-md focus:outline-none ring-1 ring-black ring-opacity-5 ${contentClasses}`} static>
+                            {children}
+                        </Menu.Items>
+                    </div>
+                </Transition>
+            </>
+        )}
+>>>>>>> chromium--ui:src/components/Dropdown/Dropdown.tsx
         </Menu>
     )
 }

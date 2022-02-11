@@ -4,7 +4,7 @@ import { Menu } from '@headlessui/react'
 const DropdownLink = ({ children, ...props }) => (
     <Menu.Item>
         {({ active }) => (
-            <Link {...props}>
+            <Link {...props} href={props.href}>
                 <a
                     className={`w-full text-left block px-4 py-2 text-sm leading-5 text-gray-700 ${
                         active ? 'bg-gray-100' : ''

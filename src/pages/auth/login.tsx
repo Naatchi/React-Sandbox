@@ -1,13 +1,13 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthSessionStatus from '@/components/AuthSessionStatus'
-import AuthValidationErrors from '@/components/AuthValidationErrors'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import AuthCard from '../../components/Auth/AuthCard'
+import AuthSessionStatus from '../../components/Auth/AuthSessionStatus'
+import AuthValidationErrors from '../../components/Auth/AuthValidationErrors'
+import Button from '../../components/Button/Button'
+import GuestLayout from '../../components/Layouts/GuestLayout'
+import Input from '../../components/Form/Input'
+import Label from '../../components/Form/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -26,7 +26,7 @@ const Login = () => {
 
     useEffect(() => {
         if (router.query.reset?.length > 0 && errors.length == 0) {
-            setStatus(atob(router.query.reset))
+            setStatus(Buffer.from(router.query.reset.toString(), 'base64'))
         } else {
             setStatus(null)
         }
@@ -57,7 +57,13 @@ const Login = () => {
                 <form onSubmit={submitForm}>
                     {/* Username */}
                     <div>
+<<<<<<< HEAD:src/pages/login.js
                         <Label htmlFor="username">Username</Label>
+=======
+                        <Label className="" htmlFor="email">
+                            Email
+                        </Label>
+>>>>>>> chromium--ui:src/pages/auth/login.tsx
 
                         <Input
                             id="username"
@@ -72,7 +78,9 @@ const Login = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">
+                            Password
+                        </Label>
 
                         <Input
                             id="password"
@@ -104,7 +112,13 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
+<<<<<<< HEAD:src/pages/login.js
                         <Button className="ml-3">Login</Button>
+=======
+                        <Button type="" className="ml-3">
+                            Login
+                        </Button>
+>>>>>>> chromium--ui:src/pages/auth/login.tsx
                     </div>
                 </form>
             </AuthCard>

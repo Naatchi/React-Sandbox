@@ -1,12 +1,12 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import Dropdown from '@/components/Dropdown'
+import ApplicationLogo from '../ApplicationLogo'
+import Dropdown from '../Dropdown/Dropdown'
 import Link from 'next/link'
-import NavLink from '@/components/NavLink'
+import NavLink from '../NavLink/NavLink'
 import ResponsiveNavLink, {
     ResponsiveNavButton,
-} from '@/components/ResponsiveNavLink'
-import { DropdownButton } from '@/components/DropdownLink'
-import { useAuth } from '@/hooks/auth'
+} from '../NavLink/ResponsiveNavLink'
+import { DropdownButton } from '../Dropdown/DropdownLink'
+import { useAuth } from '../../hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -35,6 +35,7 @@ const Navigation = ({ user }) => {
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
+                                ref
                                 href="/dashboard"
                                 active={router.pathname == '/dashboard'}>
                                 Dashboard
@@ -46,7 +47,7 @@ const Navigation = ({ user }) => {
                     <div className="hidden sm:flex sm:items-center sm:ml-6">
                         <Dropdown
                             align="right"
-                            width="48"
+                            width={48}
                             trigger={
                                 <button className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out">
                                     <div>{user?.name}</div>
@@ -110,6 +111,7 @@ const Navigation = ({ user }) => {
                 <div className="block sm:hidden">
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
+                            ref
                             href="/dashboard"
                             active={router.pathname == '/dashboard'}>
                             Dashboard

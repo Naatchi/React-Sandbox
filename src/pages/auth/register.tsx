@@ -1,12 +1,12 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import AuthCard from '@/components/AuthCard'
-import AuthValidationErrors from '@/components/AuthValidationErrors'
-import Button from '@/components/Button'
-import GuestLayout from '@/components/Layouts/GuestLayout'
-import Input from '@/components/Input'
-import Label from '@/components/Label'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import AuthCard from '../../components/Auth/AuthCard'
+import AuthValidationErrors from '../../components/Auth/AuthValidationErrors'
+import Button from '../../components/Button/Button'
+import GuestLayout from '../../components/Layouts/GuestLayout'
+import Input from '../../components/Form/Input'
+import Label from '../../components/Form/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import { useState } from 'react'
 
 const Register = () => {
@@ -42,7 +42,13 @@ const Register = () => {
                 <form onSubmit={submitForm}>
                     {/* Auth Token */}
                     <div>
+<<<<<<< HEAD:src/pages/register.js
                         <Label htmlFor="authToken">Auth Token</Label>
+=======
+                        <Label className="" htmlFor="authToken">
+                            Name
+                        </Label>
+>>>>>>> chromium--ui:src/pages/auth/register.tsx
 
                         <Input
                             id="authToken"
@@ -57,7 +63,9 @@ const Register = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">
+                            Password
+                        </Label>
 
                         <Input
                             id="password"
@@ -72,7 +80,7 @@ const Register = () => {
 
                     {/* Confirm Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password_confirmation">
+                        <Label className="" htmlFor="password_confirmation">
                             Confirm Password
                         </Label>
 
@@ -95,7 +103,9 @@ const Register = () => {
                             </a>
                         </Link>
 
-                        <Button className="ml-4">Register</Button>
+                        <Button type="" className="ml-4">
+                            Register
+                        </Button>
                     </div>
                 </form>
             </AuthCard>
