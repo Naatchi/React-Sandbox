@@ -54,11 +54,19 @@ const Login = () => {
                 {/* Validation Errors */}
                 <AuthValidationErrors className="mb-4" errors={errors} />
 
+                {/* Account warning */}
+                <div className="bg-yellow-200 my-4 p-5 rounded-md ">
+                    <p>
+                        Log in with your <strong>Wynntils account</strong>, not
+                        your <strong>Minecraft account</strong>
+                    </p>
+                </div>
+
                 <form onSubmit={submitForm}>
                     {/* Username */}
                     <div>
-                        <Label className="" htmlFor="email">
-                            Email
+                        <Label className="" htmlFor="usenrame">
+                            Minecraft Username
                         </Label>
 
                         <Input

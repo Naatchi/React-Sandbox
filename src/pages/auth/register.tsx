@@ -42,13 +42,7 @@ const Register = () => {
                 <form onSubmit={submitForm}>
                     {/* Auth Token */}
                     <div>
-<<<<<<< HEAD:src/pages/register.js
-                        <Label htmlFor="authToken">Auth Token</Label>
-=======
-                        <Label className="" htmlFor="authToken">
-                            Name
-                        </Label>
->>>>>>> chromium--ui:src/pages/auth/register.tsx
+                        <Label className="" htmlFor="authToken">Auth Token</Label>
 
                         <Input
                             id="authToken"
