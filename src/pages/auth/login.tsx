@@ -57,13 +57,9 @@ const Login = () => {
                 <form onSubmit={submitForm}>
                     {/* Username */}
                     <div>
-<<<<<<< HEAD:src/pages/login.js
-                        <Label htmlFor="username">Username</Label>
-=======
                         <Label className="" htmlFor="email">
                             Email
                         </Label>
->>>>>>> chromium--ui:src/pages/auth/login.tsx
 
                         <Input
                             id="username"
@@ -112,13 +108,9 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-<<<<<<< HEAD:src/pages/login.js
-                        <Button className="ml-3">Login</Button>
-=======
                         <Button type="" className="ml-3">
                             Login
                         </Button>
->>>>>>> chromium--ui:src/pages/auth/login.tsx
                     </div>
                 </form>
             </AuthCard>
