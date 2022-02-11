@@ -19,14 +19,14 @@ const Login = () => {
         redirectIfAuthenticated: '/dashboard',
     })
 
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
 
     useEffect(() => {
         if (router.query.reset?.length > 0 && errors.length == 0) {
-            setStatus(Buffer.from(router.query.reset as String, "base64"))
+            setStatus(Buffer.from(router.query.reset.toString(), 'base64'))
         } else {
             setStatus(null)
         }
@@ -35,7 +35,7 @@ const Login = () => {
     const submitForm = async event => {
         event.preventDefault()
 
-        login({ email, password, setErrors, setStatus })
+        login({ username, password, setErrors, setStatus })
     }
 
     return (
@@ -48,7 +48,6 @@ const Login = () => {
                         </a>
                     </Link>
                 }>
-
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
@@ -56,16 +55,18 @@ const Login = () => {
                 <AuthValidationErrors className="mb-4" errors={errors} />
 
                 <form onSubmit={submitForm}>
-                    {/* Email Address */}
+                    {/* Username */}
                     <div>
-                        <Label className="" htmlFor="email">Email</Label>
+                        <Label className="" htmlFor="email">
+                            Email
+                        </Label>
 
                         <Input
-                            id="email"
-                            type="email"
-                            value={email}
+                            id="username"
+                            type="text"
+                            value={username}
                             className="block mt-1 w-full"
-                            onChange={event => setEmail(event.target.value)}
+                            onChange={event => setUsername(event.target.value)}
                             required
                             autoFocus
                         />
@@ -73,7 +74,9 @@ const Login = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label className="" htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">
+                            Password
+                        </Label>
 
                         <Input
                             id="password"
@@ -105,13 +108,9 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link href="/forgot-password">
-                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Forgot your password?
-                            </a>
-                        </Link>
-
-                        <Button type="" className="ml-3">Login</Button>
+                        <Button type="" className="ml-3">
+                            Login
+                        </Button>
                     </div>
                 </form>
             </AuthCard>

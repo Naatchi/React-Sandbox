@@ -15,8 +15,7 @@ const Register = () => {
         redirectIfAuthenticated: '/dashboard',
     })
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const [authToken, setAuthToken] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPasswordConfirmation] = useState('')
     const [errors, setErrors] = useState([])
@@ -24,7 +23,7 @@ const Register = () => {
     const submitForm = event => {
         event.preventDefault()
 
-        register({ name, email, password, password_confirmation, setErrors })
+        register({ authToken, password, password_confirmation, setErrors })
     }
 
     return (
@@ -37,43 +36,32 @@ const Register = () => {
                         </a>
                     </Link>
                 }>
-
                 {/* Validation Errors */}
                 <AuthValidationErrors className="mb-4" errors={errors} />
 
                 <form onSubmit={submitForm}>
-                    {/* Name */}
+                    {/* Auth Token */}
                     <div>
-                        <Label className="" htmlFor="name">Name</Label>
+                        <Label className="" htmlFor="authToken">
+                            Name
+                        </Label>
 
                         <Input
-                            id="name"
+                            id="authToken"
                             type="text"
-                            value={name}
+                            value={authToken}
                             className="block mt-1 w-full"
-                            onChange={event => setName(event.target.value)}
+                            onChange={event => setAuthToken(event.target.value)}
                             required
                             autoFocus
                         />
                     </div>
 
-                    {/* Email Address */}
-                    <div className="mt-4">
-                        <Label className="" htmlFor="email">Email</Label>
-
-                        <Input
-                            id="email"
-                            type="email"
-                            value={email}
-                            className="block mt-1 w-full"
-                            onChange={event => setEmail(event.target.value)}
-                            required
-                        />
-                    </div>
-
                     {/* Password */}
                     <div className="mt-4">
-                        <Label className="" htmlFor="password">Password</Label>
+                        <Label className="" htmlFor="password">
+                            Password
+                        </Label>
 
                         <Input
                             id="password"
@@ -111,7 +99,9 @@ const Register = () => {
                             </a>
                         </Link>
 
-                        <Button type="" className="ml-4">Register</Button>
+                        <Button type="" className="ml-4">
+                            Register
+                        </Button>
                     </div>
                 </form>
             </AuthCard>
