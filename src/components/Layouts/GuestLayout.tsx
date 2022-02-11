@@ -5,7 +5,11 @@ const GuestLayout = ({ children }) => {
         <>
             <Head>
                 <title>Wynntils</title>
-                <link rel="icon" href="/images/icons/favicon.svg" type="image/x-icon" />
+                <link
+                    rel="icon"
+                    href="/images/icons/favicon.svg"
+                    type="image/x-icon"
+                />
             </Head>
 
             <div className="font-sans text-gray-900 antialiased">

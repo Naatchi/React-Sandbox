@@ -35,7 +35,6 @@ const Navigation = ({ user }) => {
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
-                                ref
                                 href="/dashboard"
                                 active={router.pathname == '/dashboard'}>
                                 Dashboard
@@ -111,7 +110,6 @@ const Navigation = ({ user }) => {
                 <div className="block sm:hidden">
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            ref
                             href="/dashboard"
                             active={router.pathname == '/dashboard'}>
                             Dashboard

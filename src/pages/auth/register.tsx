@@ -42,7 +42,9 @@ const Register = () => {
                 <form onSubmit={submitForm}>
                     {/* Auth Token */}
                     <div>
-                        <Label className="" htmlFor="authToken">Auth Token</Label>
+                        <Label className="" htmlFor="authToken">
+                            Auth Token
+                        </Label>
 
                         <Input
                             id="authToken"
@@ -91,7 +93,7 @@ const Register = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Link href="/login">
+                        <Link href="/auth/login">
                             <a className="underline text-sm text-gray-600 hover:text-gray-900">
                                 Already registered?
                             </a>

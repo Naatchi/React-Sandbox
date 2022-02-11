@@ -57,7 +57,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: any = {}) => {
             revalidate()
         }
 
-        window.location.pathname = '/login'
+        window.location.pathname = '/auth/login'
     }
 
     useEffect(() => {

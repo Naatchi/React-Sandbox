@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { ReactNode } from 'react'
 
 const MainLayout = ({ title, headerTitle, children }) => {
     return (
@@ -17,4 +16,4 @@ const MainLayout = ({ title, headerTitle, children }) => {
     )
 }
 
-export default MainLayout;
+export default MainLayout
