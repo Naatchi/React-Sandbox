@@ -3,11 +3,12 @@ import Link from 'next/link'
 const NavLink = ({ active = false, href, children, ...props }) => (
     <Link {...props} href={href}>
         <a
-            className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out ${
+            className={`flex items-center py-3 pl-[17px] ${
                 active
-                    ? 'border-indigo-400 text-gray-900 focus:border-indigo-700'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300'
-            }`}>
+                    ? 'border-l-[3px] border-indigo-500 bg-indigo-200/50 text-gray-500 font-bold'
+                    : 'border-l-[3px] border-transparent transition-all text-gray-500 hover:pl-6 hover:border-indigo-500 hover:bg-indigo-200/50 hover:font-bold'
+            } gap-x-4`}>
+            {props?.icon}
             {children}
         </a>
     </Link>

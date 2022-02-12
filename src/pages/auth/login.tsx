@@ -10,6 +10,8 @@ import Link from 'next/link'
 import { useAuth } from '../../hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
     const router = useRouter()
@@ -43,8 +45,9 @@ const Login = () => {
             <AuthCard
                 logo={
                     <Link href="/">
-                        <a>
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                        <a className="flex items-center">
+                            <ApplicationLogo className="w-10 h-10 fill-current text-gray-500 mr-3" />
+                            <h1>Wynntils</h1>
                         </a>
                     </Link>
                 }>
@@ -52,10 +55,18 @@ const Login = () => {
                 <AuthSessionStatus className="mb-4" status={status} />
 
                 {/* Validation Errors */}
-                <AuthValidationErrors className="mb-4" errors={errors} />
+                <AuthValidationErrors
+                    className="bg-red-300 my-4 p-5 rounded-md flex items-center"
+                    errors={errors}
+                />
 
                 {/* Account warning */}
-                <div className="bg-yellow-200 my-4 p-5 rounded-md ">
+                <div className="bg-yellow-200 my-4 p-5 rounded-md flex items-center ">
+                    <FontAwesomeIcon
+                        icon={faTriangleExclamation}
+                        size="lg"
+                        className="pr-5"
+                    />
                     <p>
                         Log in with your <strong>Wynntils account</strong>, not
                         your <strong>Minecraft account</strong>
@@ -65,7 +76,7 @@ const Login = () => {
                 <form onSubmit={submitForm}>
                     {/* Username */}
                     <div>
-                        <Label className="" htmlFor="usenrame">
+                        <Label className="" htmlFor="username">
                             Minecraft Username
                         </Label>
 
@@ -106,7 +117,7 @@ const Login = () => {
                                 id="remember_me"
                                 type="checkbox"
                                 name="remember"
-                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                className="rounded border-gray-300 text-green-400 shadow-sm focus:border-green-4OO focus:ring focus:ring-green-200 focus:ring-opacity-50"
                             />
 
                             <span className="ml-2 text-sm text-gray-600">
@@ -116,7 +127,9 @@ const Login = () => {
                     </div>
 
                     <div className="flex items-center justify-end mt-4">
-                        <Button type="" className="ml-3">
+                        <Button
+                            type=""
+                            className="ml-3 bg-green-400 hover:bg-green-500">
                             Login
                         </Button>
                     </div>
