@@ -9,11 +9,13 @@ import {
     faTShirt,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAuth } from '../../hooks/auth'
+import { ResponsiveNavButton } from '../NavLink/ResponsiveNavLink'
 
 const Sidebar = ({ user }) => {
     const router = useRouter()
 
-    // const { logout } = useAuth()
+    const { logout } = useAuth()
 
     let bgGradient
     let rankIcon
@@ -85,6 +87,9 @@ const Sidebar = ({ user }) => {
                         }>
                         My Punishments
                     </NavLink>
+                    <ResponsiveNavButton onClick={logout}>
+                        Log Out
+                    </ResponsiveNavButton>
                 </div>
             </div>
         </aside>
