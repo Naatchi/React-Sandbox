@@ -1,4 +1,3 @@
-import { useAuth } from '../../hooks/auth'
 import { useRouter } from 'next/router'
 import NavLink from '../NavLink/NavLink'
 import {
@@ -10,12 +9,11 @@ import {
     faTShirt,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
 
 const Sidebar = ({ user }) => {
     const router = useRouter()
 
-    const { logout } = useAuth()
+    // const { logout } = useAuth()
 
     let bgGradient
     let rankIcon
@@ -35,7 +33,7 @@ const Sidebar = ({ user }) => {
         bgGradient = 'bg-gradient-to-br from-gray-200/75 to-gray-300/75'
     }
 
-    const [open, setOpen] = useState(true)
+    // const [open, setOpen] = useState(true)
 
     return (
         <aside
@@ -61,7 +59,9 @@ const Sidebar = ({ user }) => {
                 </div>
                 <hr className="mt-5 border-gray-200" />
                 <div className="mt-5 space-y-3">
-                    <h1 className="px-5 flex font-semibold text-sm text-gray-500 my-4 font-sans uppercase">Dashboard</h1>
+                    <h1 className="px-5 flex font-semibold text-sm text-gray-500 my-4 font-sans uppercase">
+                        Dashboard
+                    </h1>
                     <NavLink
                         active={router.pathname === '/dashboard'}
                         href="/dashboard"

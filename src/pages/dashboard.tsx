@@ -7,8 +7,6 @@ const Dashboard = () => {
         middleware: 'auth',
     })
 
-    console.log(user)
-
     return (
         <AppLayout
             header={
