@@ -4,9 +4,16 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     darkMode: 'media',
     theme: {
+        screens: {
+            xs: '320px',
+            ...defaultTheme.screens,
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                blurple: '#5865F2',
             },
         },
     },
