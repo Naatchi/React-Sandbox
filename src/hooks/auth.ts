@@ -15,9 +15,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: any = {}) => {
             }),
     )
 
-    const { data: punishments } = useSWR('/api/punishments', () =>
+    const { data: punishments } = useSWR('/api/punishments/me', () =>
         axios
-            .get('/api/punishments')
+            .get('/api/punishments/me')
             .then(res => res.data)
             .catch(error => {
                 if (error.response.status != 409) throw error
