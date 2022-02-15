@@ -12,8 +12,15 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: any = {}) => {
             .then(res => res.data)
             .catch(error => {
                 if (error.response.status != 409) throw error
+            }),
+    )
 
-                router.push('/verify-email')
+    const { data: punishments } = useSWR('/api/punishments', () =>
+        axios
+            .get('/api/punishments')
+            .then(res => res.data)
+            .catch(error => {
+                if (error.response.status != 409) throw error
             }),
     )
 
@@ -68,6 +75,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: any = {}) => {
 
     return {
         user,
+        punishments,
         register,
         login,
         logout,
