@@ -1,6 +1,6 @@
-import AppLayout from '../components/Layouts/AppLayout'
+import AppLayout from '../../components/Layouts/AppLayout'
 import Head from 'next/head'
-import { useAuth } from '../hooks/auth'
+import { useAuth } from '../../hooks/auth'
 
 const Dashboard = () => {
     const { user } = useAuth({
