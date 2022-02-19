@@ -68,13 +68,13 @@ const Sidebar = ({ user, open }) => {
                 </h1>
                 <NavLink
                     active={router.pathname === '/user/dashboard'}
-                    href="/dashboard"
+                    href="/user/dashboard"
                     icon={<FontAwesomeIcon icon={faHouse} size={'lg'} />}>
                     Home
                 </NavLink>
                 <NavLink
                     active={router.pathname === '/user/capes'}
-                    href="/"
+                    href="/user/dashboard"
                     icon={<FontAwesomeIcon icon={faTShirt} size={'lg'} />}>
                     Cape Designs
                 </NavLink>
