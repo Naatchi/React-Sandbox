@@ -2,7 +2,6 @@ import Sidebar from './Sidebar'
 import { useAuth } from '../../hooks/auth'
 import Head from 'next/head'
 import { useState } from 'react'
-import { ResponsiveNavButton } from '../NavLink/ResponsiveNavLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 

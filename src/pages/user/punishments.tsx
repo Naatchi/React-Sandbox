@@ -8,7 +8,7 @@ const Dashboard = () => {
         middleware: 'auth',
     })
 
-    let tagClass
+    //    let tagClass
     return (
         <AppLayout
             header={
