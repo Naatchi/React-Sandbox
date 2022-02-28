@@ -8,8 +8,12 @@ import Label from '../../components/Form/Label'
 import Link from 'next/link'
 import { useAuth } from '../../hooks/auth'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Register = () => {
+    const router = useRouter()
+    const { token } = router.query
+
     const { register } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
@@ -49,7 +53,7 @@ const Register = () => {
                         <Input
                             id="authToken"
                             type="text"
-                            value={authToken}
+                            value={token ?? authToken}
                             className="block mt-1 w-full"
                             onChange={event => setAuthToken(event.target.value)}
                             required
