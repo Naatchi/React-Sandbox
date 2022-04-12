@@ -14,7 +14,7 @@ module.exports = {
             },
             colors: {
                 blurple: '#5865F2',
-            },
+            }
         },
     },
     variants: {
