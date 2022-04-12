@@ -1,4 +1,4 @@
-const ApplicationLogo = props => (
+const ApplicationLogo = (props: any) => (
     <img
         src="/images/icons/favicon.svg"
         alt="Logo"
