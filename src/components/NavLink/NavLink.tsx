@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const NavLink = ({ active = false, href, children, ...props }) => (
+const NavLink = ({ active = false, href, children, ...props }: any) => (
     <Link {...props} href={href}>
         <a
             className={`flex items-center py-3 pl-[17px] w-full ${

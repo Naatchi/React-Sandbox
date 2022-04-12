@@ -1,7 +1,7 @@
 import { faSkull } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const AuthValidationErrors = ({ errors = [], ...props }) => (
+const AuthValidationErrors = ({ errors = [], ...props }: any) => (
     <>
         {errors.length > 0 && (
             <div {...props}>
@@ -11,7 +11,7 @@ const AuthValidationErrors = ({ errors = [], ...props }) => (
                 <div>
                     <h1 className="font-bold">Whoops! Something went wrong.</h1>
                     <ul className="list-disc list-inside text-sm">
-                        {errors.map(error => (
+                        {errors.map((error: any) => (
                             <li key={error}>{error}</li>
                         ))}
                     </ul>

@@ -7,8 +7,8 @@ const Dropdown = ({
     contentClasses = 'py-1 bg-white',
     trigger,
     children,
-}) => {
-    let alignmentClasses
+}: any) => {
+    let alignmentClasses: string
 
     switch (align) {
         case 'left':
