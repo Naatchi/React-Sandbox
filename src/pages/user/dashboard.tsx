@@ -1,4 +1,4 @@
-import AppLayout from '../../components/Layouts/AppLayout'
+import AppLayout from '@/layouts/AppLayout'
 import Head from 'next/head'
 import { useAuth } from '../../hooks/auth'
 

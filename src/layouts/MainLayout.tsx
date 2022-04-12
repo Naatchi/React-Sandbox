@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const MainLayout = ({ title, headerTitle, children }) => {
+const MainLayout = ({ title, headerTitle, children }: any) => {
     return (
         <>
             <Head>

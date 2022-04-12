@@ -1,16 +1,9 @@
-import Sidebar from './Sidebar'
-import { useAuth } from '../../hooks/auth'
 import Head from 'next/head'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const AppLayout = ({ header, children }) => {
-    const { user } = useAuth({
-        middleware: 'auth',
-        redirectIfAuthenticated: true,
-    })
-
+const AppLayout = ({ header, children }: any) => {
     const [open, setOpen] = useState(true)
 
     return (
@@ -24,7 +17,6 @@ const AppLayout = ({ header, children }) => {
             </Head>
 
             <div className="min-h-screen bg-gray-100 flex">
-                <Sidebar user={user} open={open} />
                 {/* Page Content */}
                 <main className="flex-1">
                     <header className="bg-white border-b">
