@@ -1,6 +1,11 @@
 import Link from 'next/link'
 
-const ResponsiveNavLink = ({ active = false, href, children, ...props }: any) => (
+const ResponsiveNavLink = ({
+    active = false,
+    href,
+    children,
+    ...props
+}: any) => (
     <Link {...props} href={href}>
         <a
             className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium leading-5 focus:outline-none transition duration-150 ease-in-out ${
@@ -13,7 +18,7 @@ const ResponsiveNavLink = ({ active = false, href, children, ...props }: any) =>
     </Link>
 )
 
-export const ResponsiveNavButton = props => (
+export const ResponsiveNavButton = (props: any) => (
     <button
         className={`inline-flex items-center gap-x-4 pl-4 pr-4 py-2 hover:bg-red-400 transition-all ease-in-out`}
         {...props}

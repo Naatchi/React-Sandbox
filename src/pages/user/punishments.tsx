@@ -54,7 +54,7 @@ const Dashboard = () => {
                                             </thead>
                                             <tbody className="bg-white divide-y divide-gray-200">
                                                 {punishments?.map(
-                                                    punishment => (
+                                                    (punishment: any) => (
                                                         <tr
                                                             key={
                                                                 punishment._id

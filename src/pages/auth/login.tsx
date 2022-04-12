@@ -9,12 +9,12 @@ import Label from '@/components/Form/Label'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
-    const router = useRouter()
+    const router: NextRouter = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
@@ -34,7 +34,7 @@ const Login = () => {
         }
     })
 
-    const submitForm = async event => {
+    const submitForm = async (event: any) => {
         event.preventDefault()
 
         login({ username, password, setErrors, setStatus })
