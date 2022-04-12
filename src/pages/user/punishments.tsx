@@ -10,12 +10,7 @@ const Dashboard = () => {
 
     //    let tagClass
     return (
-        <AppLayout
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    My Punishments
-                </h2>
-            }>
+        <AppLayout header="My Punishments">
             <Head>
                 <title>Wynntils - {user?.username}</title>
             </Head>
@@ -75,18 +70,18 @@ const Dashboard = () => {
                                                             <td className="px-6 py-4 whitespace-nowrap text-sm">
                                                                 {
                                                                     <span
-                                                                        className={`rounded-full px-2 py-1 uppercase font-bold ${clsx(
+                                                                        className={`rounded px-2 py-1 uppercase font-bold ${clsx(
                                                                             {
-                                                                                'bg-yellow-200/50 text-yellow-600':
+                                                                                'bg-amber-200 text-amber-600':
                                                                                     punishment.type.toLowerCase() ===
                                                                                     'strike',
-                                                                                'bg-orange-200/50 text-orange-600':
+                                                                                'bg-orange-200 text-orange-600':
                                                                                     punishment.type.toLowerCase() ===
                                                                                     'kick',
-                                                                                'bg-red-200/50 text-red-600':
+                                                                                'bg-red-200 text-red-600':
                                                                                     punishment.type.toLowerCase() ===
                                                                                     'ban',
-                                                                                'bg-blue-200/50 text-blue-600':
+                                                                                'bg-sky-200 text-sky-600':
                                                                                     punishment.type.toLowerCase() ===
                                                                                     'mute',
                                                                             },

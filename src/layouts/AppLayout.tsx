@@ -1,11 +1,8 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import Sidebar from '@/components/Sidebar'
 
 const AppLayout = ({ header, children }: any) => {
-    const [open, setOpen] = useState(true)
-
     return (
         <>
             <Head>
@@ -16,25 +13,21 @@ const AppLayout = ({ header, children }: any) => {
                 />
             </Head>
 
-            <div className="min-h-screen bg-gray-100 flex">
+            <Sidebar />
+            <div className="relative md:ml-64 bg-gray-100 min-h-screen">
                 {/* Page Content */}
-                <main className="flex-1">
-                    <header className="bg-white border-b">
-                        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex items-center gap-x-4">
-                            <button
-                                className="rounded"
-                                onClick={() => setOpen(!open)}>
-                                {open ? (
-                                    <FontAwesomeIcon icon={faTimes} size="xs" />
-                                ) : (
-                                    <FontAwesomeIcon icon={faBars} size="xs" />
-                                )}
-                            </button>
-                            {header}
-                        </div>
-                    </header>
+                <nav className="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-roz md:flex-nowrap md:justify-start flex items-center p-4">
+                    <div className="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
+                        <h1 className="text-white text-lg uppercase hidden lg:inline-block font-semibold">{header}</h1>
+                    </div>
+                </nav>
+                <div className="relative bg-slate-900 md:pt-32 pb-32 pt-12">
+                    <p className="text-white">Info here?</p>
+                </div>
+
+                <div className="relative px-4 md:px-10 mx-auto w-full -m-24 z-11">
                     {children}
-                </main>
+                </div>
             </div>
         </>
     )
