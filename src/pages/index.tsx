@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Laravel</title>
+                <title>TheReactSandbox</title>
             </Head>
             <section id="the-entire-site" className="grid place-items-center bg-gray-800 h-screen">
                 <div className="border-gray-600 border-2 bg-gray-700 p-2 rounded-md shadow-md" style={{width: '500px', height: '300px'}}>
