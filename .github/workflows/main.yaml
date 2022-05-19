@@ -1,0 +1,35 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_BASE_PATH: /TheSandbox/
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: getting files
+        uses: actions/checkout@v2
+      - name: setting up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: installing packages
+        run: npm i
+      - name: building site
+        run: npm run build
+      - name: exporting site
+        run: npm run export
+      - name: deploying site
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: gh-pages
+          folder: out
