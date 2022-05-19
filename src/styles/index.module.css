@@ -1,0 +1,95 @@
+
+.one {
+    background-color: blue;
+    overflow: hidden;
+    height: 225px;
+    width: 115px;
+    float: left;
+    position: absolute;
+    transition: width 0.5s;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 3;
+}
+.one:hover {
+    width: 200px;
+    background-color: aquamarine;
+}
+.one div {
+    visibility: hidden;
+}
+.one:hover div {
+    visibility: visible;
+}
+
+.two {
+    background-color: red;
+    overflow: hidden;
+    height: 225px;
+    width: 115px;
+    margin-left: 120px;
+    float: left;
+    position: absolute;
+    text-align: center;
+    border-radius: 6px;
+    transition: width 0.5s;
+    z-index: 2;
+}
+.two:hover {
+    width: 200px;
+    background-color: lightblue;
+}
+.two a {
+    visibility: hidden;
+}
+.two:hover a {
+    visibility: visible;
+}
+
+.three {
+    background-color: green;
+    overflow: hidden;
+    height: 225px;
+    width: 115px;
+    margin-left: 240px;
+    float: left;
+    text-align: center;
+    position: absolute;
+    border-radius: 6px;
+    transition: width 0.5s;
+    z-index: 1
+}
+.three:hover {
+    width: 200px;
+    background-color: indianred;
+}
+.three div {
+    visibility: hidden;
+}
+.three:hover div {
+    visibility: visible;
+}
+
+.four {
+    background-color: gray;
+    overflow: hidden;
+    height: 225px;
+    width: 115px;
+    margin-left: 360px;
+    float: left;
+    text-align: center;
+    position: absolute;
+    border-radius: 6px;
+    transition: width 0.5s;
+    z-index: 0
+}
+.four:hover {
+    width: 200px;
+    background-color: deepskyblue;
+}
+.four div {
+    visibility: hidden;
+}
+.four:hover div {
+    visibility: visible;
+}
