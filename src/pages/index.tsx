@@ -32,6 +32,7 @@ export default function Home() {
                         </a>
                     </div>
                     <div className={styles.three}>
+                        this is text
                         <div>
                             hello jonny :)
                         </div>
