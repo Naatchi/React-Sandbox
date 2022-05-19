@@ -32,7 +32,7 @@ export default function Home() {
                         </a>
                     </div>
                     <div className={styles.three}>
-                        this is a thing
+                        hello jonny :)
                     </div>
                     <div className={styles.four}>
                         this is a thing
