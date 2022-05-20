@@ -1,0 +1,45 @@
+
+.hamburger_menu {
+    position: fixed;
+    top: 20px;
+    transition: all 0.5s;
+}
+.hamburger_menu div {
+    background-color: black;
+    width: 25px;
+    height: 3px;
+    margin: 5px 5px 5px 5px;
+}
+
+.hamburger_menu:hover {
+    background-color: blue;
+    height: 300px;
+    width: 200px;
+}
+
+
+$index: 3;
+$width: 210px;
+$height: 30px;
+$expanded: 100px;
+
+@for $i from 0 through $index {
+    .card_#{$i} {
+        background-color: gray;
+        overflow: hidden;
+        height: $height;
+        width: $width;
+        float: left;
+        position: relative;
+        transition: height 0.5s;
+        text-align: center;
+        border-radius: 6px;
+        z-index: 0;
+        /*margin-left: ($width + 5) * $i */
+    }
+    .card_#{$i}:hover {
+        background-color: green;
+        height: $expanded;
+        z-index: 1;
+    }
+}

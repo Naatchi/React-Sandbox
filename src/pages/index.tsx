@@ -1,48 +1,22 @@
 import Head from 'next/head'
-import styles from '../styles/index.module.css'
+import styles from '../styles/index.module.scss'
 
 export default function Home() {
     return (
         <>
             <Head>
-                <title>TheReactSandbox</title>
+                <title>Title</title>
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
-            <section id="the-entire-site" className="grid place-items-center bg-gray-800 h-screen">
-                <div className="border-gray-600 border-2 bg-gray-700 p-2 rounded-md shadow-md" style={{width: '500px', height: '300px'}}>
-                    <div className='border-gray-600 border-2 p-2 rounded-md'>
-                        The Sandbox
-                    </div>
-                    <div id="spacer" className='h-2' />
+            <div className='bg-gray-800 bg-auto h-screen'>
+                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 overflow-hidden">
+                    <p className="flex mt-20 justify-center text-lg font-bold uppercase text-white"> Sandbox </p>
+                    <div className="w-full p-2 justify-center bg-gray-700 rounded h-96 shadow-md">
 
-                    <div className={styles.one}>
-                        this is a thing<br/>
-                        <div>
-                            <li>
-                                thing
-                            </li>
-                            <li>
-                                thing 2
-                            </li>
-                        </div>
-                    </div>
-                    <div className={styles.two}>
-                        this is text
-                        <a href='https://cdn.discordapp.com/attachments/838991750584074240/976605107108085810/Screenshot_260.png'>
-                            <img src='https://cdn.discordapp.com/attachments/838991750584074240/976605107108085810/Screenshot_260.png' alt='test-image' />
-                        </a>
-                    </div>
-                    <div className={styles.three}>
-                        this is text
-                        <div>
-                            hello jonny :)
-                        </div>
-                    </div>
-                    <div className={styles.four}>
-                        this is a thing
                     </div>
                 </div>
-            </section>
-            <section className='h-screen' />
+            </div>
         </>
     )
 }
